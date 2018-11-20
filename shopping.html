@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>蘑菇街</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/shopping.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+
+<!-- 侧边栏 -->
+
+<aside>
+	<ul>
+		<li><a href="javascript:;"><i></i>购物车</a></li>
+		<li><a href="javascript:;"><i></i>优惠券</a></li>
+		<li><a href="javascript:;"><i></i>钱包</a></li>
+		<li><a href="javascript:;"><i></i>足迹</a></li>
+		<li><a href="javascript:;"><i></i></a></li>
+		<li><a href="javascript:;"><i></i></a></li>
+	</ul>
+</aside>
+	
+
+
+
+<!-- header_top -->
+
+<div class="header_top">
+	<div class="center">	
+		<span><a href="javascript:;">蘑菇街首页</a></span>
+		<ul>
+			<li><a href="login.html">登录</a></li>
+			<li><a href="javascript:;">我的订单</a></li>
+			<li><a href="shopping.html">购物车</a></li>
+			<li><a href="javascript:;">客户服务</a></li>
+			<li><a href="javascript:;">商家后台</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="header_bottom">
+	<div class="center">
+		<img src="images/logo.png" />
+		<div class="pro fr">
+			<img src="images/pro.jpg"/>
+		</div>
+	</div>
+</div>
+
+	
+<main>
+	<div class="center">
+		<div class="title">
+			<span><a href="javascript:;">全部商品 4</a></span>
+			<span><a href="javascript:;">优惠 4</a></span>
+			<span><a href="javascript:;">库存紧张 0</a></span><br />
+			<div class="nav">
+				<div class="left">
+					<input type="checkbox" id="checkAll"> 全选
+				</div>
+				<div class="right fr">
+					<ul>
+						<li>商品信息</li>
+						<li>单价(元)</li>
+						<li>数量</li>
+						<li>小计</li>
+						<li>操作</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="title fl">
+				<input type="checkbox" >
+				<span>集香草食品专营店</span>
+				<img src="images/chat.gif" />
+				<span>满99元减10 去店铺凑单&gt;</span>
+			</div>
+			<div class="con fl">
+				<input type="checkbox" >
+				<img src="images/shop_p1.jpg" />
+				<span>韩国进口火鸡面超辣方便面炒面速食泡面拉面干拌面140g*5包 </span>
+				<ul>
+					<li><del>42.72</del>
+						<p>27.90</p>
+						<p>抢购价</p>
+					</li>
+					<li>1</li>
+					<li class="price">27.90</li>
+					<li>删除</li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="content">
+			<div class="title fl">
+				<input type="checkbox" >
+				<span> 尚奇眼镜官方旗舰店</span>
+				<img src="images/chat.gif" />
+				<span>满99元减10 去店铺凑单&gt;</span>
+			</div>
+			<div class="con fl">
+				<input type="checkbox" >
+				<img src="images/shop_p2.jpg" />
+				<span>尚奇【任选2件立减10元】韩版太阳镜复古墨镜女显瘦明星同款大框 </span>
+				<ul>
+					<li><del>41.29</del>
+						<p>28.90</p>
+						<p>拼团价</p>
+					</li>
+					<li>1</li>
+					<li class="price">28.90</li>
+					<li>删除</li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="pay clearfix">
+			<!-- <div class="left fl">
+				<input type="checkbox" id="all">
+				<label for="all">全选</label>
+			</div> -->
+			<div class="right fr">
+				￥<span id="total">0.00</span>
+				<button>去付款</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let check = document.getElementById('checkAll'),
+			checks = document.getElementsByTagName('input'),
+			items = document.getElementsByClassName('content'),
+			price = document.getElementsByClassName('price'),
+			total = document.getElementById('total');
+			check.onclick = function(){
+				for (let i=0;i<checks.length;i++){
+					checks[i].checked = this.checked;
+				}
+			}
+
+			function add(){
+				for (let i=0;i<items.length;i++){
+					if(items[i].getElementsByTagName('input')[1].checked === true){
+						total.innerHTML = parseInt(total.innerHTML) + parseInt(price[i].innerHTML)
+					}
+				}
+			}
+
+	</script>
+
+</main>
+
+<footer>
+	<div class="center">
+		<div class="help">
+			<ul>
+				<li>
+					<h2>- 新手帮助 -</h2>
+					<span><a href="javascript:;">常见问题</a></span>
+					<span><a href="javascript:;">自助服务</a></span><br>
+					<span><a href="javascript:;">联系客服</a></span>
+					<span><a href="javascript:;">意见反馈</a></span>
+				</li>
+				<li>
+					<h2>- 权益保障 -</h2>
+					<span><a href="javascript:;">全国包邮</a></span>
+					<span><a href="javascript:;">7天无理由退货</a></span><br>
+					<span><a href="javascript:;">退货运费补贴</a></span>
+					<span><a href="javascript:;">限时发货</a></span>
+				</li>
+				<li>
+					<h2>- 支付方式 -</h2>
+					<span><a href="javascript:;">微信支付</a></span>
+					<span><a href="javascript:;">支付宝</a></span><br>
+					<span><a href="javascript:;">白付美支付</a></span>
+				</li>
+				<li>
+					<h2>- 移动客户端下载 -</h2>
+					<span><a href="javascript:;">蘑菇街</a></span>
+					<span><a href="javascript:;">美丽说</a></span>
+					<span><a href="javascript:;">uni引力</a></span>
+				</li>
+			</ul>
+		</div>
+		<div class="other">
+			<ul>
+				<li><a href="javascript:;">美丽说</a></li>
+				<li><a href="javascript:;">|　淘粉吧</a></li>
+				<li><a href="javascript:;">|　QQ钱包</a></li>
+				<li><a href="javascript:;">|　时尚品牌网</a></li>
+				<li><a href="javascript:;">|　装修</a></li>
+				<li><a href="javascript:;">|　慧聪网</a></li>
+			</ul>
+		</div>
+		<div class="list">
+			<a href="javascript:;">关于我们</a>
+			<a href="javascript:;">招聘信息</a>
+			<a href="javascript:;">联系我们</a>
+			<a href="javascript:;">商家入驻</a>
+			<a href="javascript:;">商家后台</a>
+			<a href="javascript:;">蘑菇商学院</a>
+			<a href="javascript:;">商家社区</a>
+			<a href="javascript:;">规则中心</a>
+			<a href="javascript:;">有害信息举报</a>
+			<span>&copy;2017 Mogujie.com 杭州卷瓜网络有限公司</span>
+		</div>
+		<div class="copyright">
+			<a href="javascript:;">营业执照：913301065526808764</a>
+			<a href="javascript:;">|　网络文化经营许可证：浙网文（2016）0349-219号</a>
+			<a href="javascript:;">|　增值电信业务经营许可证：浙B2-20110349</a>
+			<a href="javascript:;">|　安全责任书</a>
+			<a href="javascript:;">|　浙公网安备 33010602002329号</a>
+			<a href="javascript:;">互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002</a>
+			<a href="javascript:;">|　浙网食A33010003</a>
+			<a href="javascript:;">|　出版物网络交易平台服务经营备案证</a>
+			<a href="javascript:;">|　（浙）网械平台备字[2018]第00006号</a>
+		</div>
+	</div>
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+	<script src="js/login.js"></script>
+</head>
+<body>
+<header>
+	<div class="center">
+		<img src="images/login_logo.png" />
+		<p>依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!</p>
+	</div>
+</header>
+
+<main>
+	<div class="center">
+		<div class="login fr">
+			<div class="title" id="title">
+				<a href="#" id="com" class="tit">普通登录</a>
+				<a href="#" id="phone">手机无密码登录</a>
+				<p id="tra"></p>
+			</div>
+			<div class="content" id="com_login" >
+				<input type="text" placeholder="用户名/邮箱/手机号">
+				<input type="text" placeholder="密码">
+				<button>登 录</button>
+				<span>QQ登录</span>
+				<span>微信登录</span>
+				<span><a href="#">忘记密码</a></span>
+			</div>
+			<div class="content fn" id="ph_login">
+				<input type="text" placeholder="手机号码" maxlength="11" id="tel">
+				<p>动态获取密码</p>
+				<input type="text" placeholder="动态密码" maxlength="6">
+				<button>登 录</button>
+				<span>QQ登录</span>
+				<span>微信登录</span>
+				<span><a href="#">忘记密码</a></span>
+			</div>
+		</div>
+	</div>
+</main>
+<script>
+let tel = document.getElementById('tel');
+tel.onblur = function(){
+	if(!(/^1[3|4|5|8][0-9]\d{8}$/.test(tel.value))){ 
+		alert("不是完整的11位手机号或者正确的手机号"); 
+		tel.value = ''
+		return false; 
+	}
+}
+</script>
+<footer>
+	<div class="center">
+		<div class="help">
+			<ul>
+				<li>
+					<h2>- 新手帮助 -</h2>
+					<span><a href="#">常见问题</a></span>
+					<span><a href="#">自助服务</a></span><br>
+					<span><a href="#">联系客服</a></span>
+					<span><a href="#">意见反馈</a></span>
+				</li>
+				<li>
+					<h2>- 权益保障 -</h2>
+					<span><a href="#">全国包邮</a></span>
+					<span><a href="#">7天无理由退货</a></span><br>
+					<span><a href="#">退货运费补贴</a></span>
+					<span><a href="#">限时发货</a></span>
+				</li>
+				<li>
+					<h2>- 支付方式 -</h2>
+					<span><a href="#">微信支付</a></span>
+					<span><a href="#">支付宝</a></span><br>
+					<span><a href="#">白付美支付</a></span>
+				</li>
+				<li>
+					<h2>- 移动客户端下载 -</h2>
+					<span><a href="#">蘑菇街</a></span>
+					<span><a href="#">美丽说</a></span>
+					<span><a href="#">uni引力</a></span>
+				</li>
+			</ul>
+		</div>
+		<div class="other">
+			<ul>
+				<li><a href="#">美丽说</a></li>
+				<li><a href="#">|　淘粉吧</a></li>
+				<li><a href="#">|　QQ钱包</a></li>
+				<li><a href="#">|　时尚品牌网</a></li>
+				<li><a href="#">|　装修</a></li>
+				<li><a href="#">|　慧聪网</a></li>
+			</ul>
+		</div>
+		<div class="list">
+			<a href="#">关于我们</a>
+			<a href="#">招聘信息</a>
+			<a href="#">联系我们</a>
+			<a href="#">商家入驻</a>
+			<a href="#">商家后台</a>
+			<a href="#">蘑菇商学院</a>
+			<a href="#">商家社区</a>
+			<a href="#">规则中心</a>
+			<a href="#">有害信息举报</a>
+			<span>&copy;2017 Mogujie.com 杭州卷瓜网络有限公司</span>
+		</div>
+		<div class="copyright">
+			<a href="#">营业执照：913301065526808764</a>
+			<a href="#">|　网络文化经营许可证：浙网文（2016）0349-219号</a>
+			<a href="#">|　增值电信业务经营许可证：浙B2-20110349</a>
+			<a href="#">|　安全责任书</a>
+			<a href="#">|　浙公网安备 33010602002329号</a>
+			<a href="#">互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002</a>
+			<a href="#">|　浙网食A33010003</a>
+			<a href="#">|　出版物网络交易平台服务经营备案证</a>
+			<a href="#">|　（浙）网械平台备字[2018]第00006号</a>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

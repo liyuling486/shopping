@@ -1,0 +1,55 @@
+
+.header_bottom{width: 100%;height: 80px;background: #f2f2f2;border-bottom: 1px solid #DDDDDD;}
+.header_bottom img{width: 150px;margin-top: 14px;}
+.header_bottom .pro img{width: 500px;}
+
+
+main .title{margin-top: 26px;width: 100%;}
+main .title span a{font-size: 16px;display: block;margin-right: 54px;float: left;color: #3F3636;height: 30px;}
+main .title span:first-child a,main .title span a:hover{color: #FF5577;border-bottom: 2px solid #FF5577;}
+main .title .nav{width: 100%;height: 70px;background: #f2f2f2;border: 1px solid #DDDDDD;float: left;}
+main .title .nav .right{line-height: 70px;}
+main .title .nav .left{line-height: 70px;float: left;margin-left: 20px;}
+main .title .nav .right li{float: left;width: 100px;text-align: center;}
+main .content{width: 100%;overflow: hidden;}
+main .content .title{height: 40px;width: 100%;background: #fff;}
+main .content .title img{vertical-align: -4px;}
+main .content .title span{font-size: 12px;margin-right: 10px;}
+main .content .title span:last-of-type{font-size: 12px;}
+
+main .content .con{width: 1172px;height: 110px;background: #f2f2f2;border: 1px solid #DDDDDD;padding: 20px 0 0 16px;}
+
+main .content .con img{vertical-align: -70px;margin: 0 10px 0 10px;border: 2px solid #ccc;width: 78px;}
+main .content .con span{font-size: 14px;color: #333;}
+main .content .con ul{float: right;}
+main .content .con li{float: left;width: 110px;text-align: center;color: #333;font-size: 14px;}
+main .content .con li p,main .content .con li:nth-of-type(3){font-size: 14px;color: #FF578A;line-height: 24px;font-weight: bold;}
+
+main .pay{
+    border: 1px solid #e5e5e5;
+    margin-top: 20px;
+}
+
+main .pay .left{
+    margin: 20px;
+}
+
+main .pay .right{
+    font-size: 26px;
+    color: #ff5777;
+}
+
+main .pay button{
+    width: 150px;
+    border: 0;
+    height: 62px;
+    outline: none;
+    margin-left: 20px;
+    cursor: pointer;
+    background: #F4635F;
+    color: #fff;
+}
+
+
+
+

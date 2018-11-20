@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>蘑菇街</title>
+    <link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/information.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+	<script src="js/aos.js"></script>
+	<script src="js/inf.js"></script>
+
+
+</head>
+<body>
+
+<!-- 侧边栏 -->
+
+<aside>
+	<ul>
+		<li><a href="javascript:;"><i></i>购物车</a></li>
+		<li><a href="javascript:;"><i></i>优惠券</a></li>
+		<li><a href="javascript:;"><i></i>钱包</a></li>
+		<li><a href="javascript:;"><i></i>足迹</a></li>
+		<li><a href="javascript:;"><i></i></a></li>
+		<li><a href="javascript:;"><i></i></a></li>
+	</ul>
+</aside>
+	
+<!-- header_top -->
+
+<div class="header_top">
+	<div class="center">	
+		<span><a href="javascript:;">蘑菇街首页</a></span>
+		<ul>
+			<li><a href="login.html">登录</a></li>
+			<li><a href="javascript:;">消息</a></li>
+			<li><a href="javascript:;">我的收藏</a></li>
+			<li><a href="javascript:;">我的订单</a></li>
+			<li><a href="shopping.html">购物车</a></li>
+			<li><a href="javascript:;">客户服务</a></li>
+			<li><a href="javascript:;">商家后台</a></li>
+		</ul>
+	</div>
+</div>
+	
+<div class="header_bottom">
+	<div class="center">
+		<div class="logo">
+			<img src="images/in_logo.jpg" class="fl" />
+			<div class="score fl">
+				<p>恋上公主</p>
+				<p></p>
+				<p>描述　　　质量　　　服务</p>
+				<p>4.59　　　4.60　　　4.69</p>
+				<p>+收藏店铺</p>
+				<p>私聊
+				</p>
+			</div>
+			<div class="reseach">
+					<input type="text" class="text" placeholder="　雪纺连衣裙">
+					<input type="submit" value="搜全站" class="submit" >
+					<input type="submit" value="搜本店" class="submit" >
+			</div>			
+		</div>
+	</div>
+</div>
+
+<div class="banner">
+</div>
+
+<div class="menu">
+	<div class="center">
+		<ul >
+			<li><a href="index.html">首页</a></li>
+			<li><a href="javascript:;">全部商品</a></li>
+			<li><a href="javascript:;">针织衫</a></li>
+			<li><a href="javascript:;">-T恤-</a></li>
+			<li><a href="javascript:;">-裤装-</a></li>
+			<li><a href="javascript:;">-外套-</a></li>
+			<li><a href="javascript:;">-衬衫-</a></li>
+			<li><a href="javascript:;">卫衣</a></li>
+		</ul>
+	</div>
+</div>
+
+<main>
+	<div class="center">
+
+		<!-- 上边框 -->
+		<div class="bor_top" id="bor_top">
+			<div class="bor_shop fl">
+				<h3>恋上公主</h3>
+			</div>
+			<div class="bor_extra fr">
+				<dl>
+					<dt>手机扫码下单</dt>
+					<dd>商品描述</dd>
+					<dd>产品参数</dd>
+					<dd>穿着效果</dd>
+					<dd>尺码说明</dd>
+					<dd>商品推荐</dd>
+				</dl>
+			</div>
+			<div class="title">
+				<ul>
+					<li><a href="javascript:;">商品详情</a></li>
+					<li><a href="javascript:;">累计评价</a></li>
+					<li><a href="javascript:;">本店同类商品</a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onscroll = function(){
+			var top = window.pageYOffset ||document.documentElement.scrollTop || document.body.scrollTop;
+			var node = document.getElementById('bor_top');
+			if(top > 1200){
+				node.style.display='block';
+			}else{
+				node.style.display='none';
+			}}
+		</script>
+		<!-- 上边框结束 -->
+
+		<div class="shop clearfix">
+			<div class="big_img fl" id="da">
+				<div id="small">
+					<img src="images/big_img.jpg" />
+					<div id="drag"></div>
+					<div id="mask"></div>
+				</div>
+				
+				<div id="big">
+					<img src="images/verybig_img.jpg" />
+				</div>
+
+				<script>
+					var oSmall = document.getElementById("small");
+					var oDrag = document.getElementById("drag");
+					var oMask = document.getElementById("mask");//遮罩层
+					var oBig = document.getElementById("big");
+					var oBigImg = oBig.getElementsByTagName("img")[0];
+					
+					oMask.onmousemove = function(ev){
+						var e = ev || window.event;
+					
+						var left = e.clientX - oDrag.offsetWidth/2; 
+						var top = e.clientY - oDrag.offsetHeight/2;  
+					
+						if(left<0) left=0;
+						if(top<0) top=0;
+						var maxX = oMask.offsetWidth - oDrag.offsetWidth;
+						var maxY = oMask.offsetHeight - oDrag.offsetHeight;
+						if(left>maxX) left = maxX;
+						if(top>maxY) top = maxY;
+					
+						oDrag.style.left = left+"px";
+						oDrag.style.top = top+"px";
+					
+						var scaleX = left/maxX;
+						var scaleY = top/maxY;
+						oBigImg.style.left = -(oBigImg.offsetWidth - oBig.offsetWidth)*scaleX+"px";
+						oBigImg.style.top = -(oBigImg.offsetHeight - oBig.offsetHeight)*scaleY+"px";
+					}
+					oMask.onmouseover = function(){
+						oBig.style.display = "block";
+						oDrag.style.display = "block";
+					}
+					oMask.onmouseout = function(){
+						oBig.style.display = "none";
+						oDrag.style.display = "none";
+					}
+					</script>
+
+
+
+			</div>
+			<div class="content fl">
+				<h1>2018春季新款气质百搭灯笼袖女装打底上衣韩版休闲宽松显瘦简约条纹长袖衬衫</h1>
+				<div class="price">
+					<p>现价:
+						<span> ¥69.00</span>
+						<del>¥98.58</del>
+					</p>
+					<p>2人拼团:
+						<span>¥49.90</span>
+						<span>评价:　　　累计销量:　　　</span>
+						<span>54　　　　　　247　</span>
+					</p>
+					<p>店铺优惠:<span>满2件立减5元</span></p>
+				</div>
+				<ul>
+					<li>
+						<p>客服:
+							<span>　联系客服　</span>
+						</p>
+					</li>
+					<li>
+						<p>颜色:
+							<img src="images/big_img.jpg" />
+						</p>
+					</li>
+					<li>
+						<p id="size">尺码:
+							<span>S</span>
+							<span>M</span>
+							<span>L</span>
+							<span>XL</span>
+							<span>XXL</span>
+						</p>
+					</li>
+					<li>数量:
+						<span id="num_dec">-</span>
+						<span id="num_price">1</span>
+						<span id="num_add">+</span>
+						<span>库存4352件</span>
+						<p>
+							<span>2人拼团购买</span>
+							<span>现价单独购买</span>
+							<span></span>
+						</p>
+						<p>
+							<span>2325</span>
+							<span>分享</span>
+							<span>举报</span>
+						</p>
+					</li>
+					<li>服务承诺:
+						<span>全国包邮</span>
+						<span>七天无理由退货</span>
+						<span>72小时发货</span>
+						<span>延误必赔</span>
+						<span>退货补运费</span>
+					</li>
+					<li>支付方式:
+						<img src="images/pay1.jpg" />
+						<img src="images/pay2.jpg" />
+						<img src="images/pay3.jpg" />
+					</li>
+					<li id="small">
+						<img src="images/pic1.jpg" />
+						<img src="images/pic2.jpg" />
+						<img src="images/pic3.jpg" />
+					</li>
+<!-- 					<script>
+						var oDa = document.getElementById('da'); //大图
+						var oSmall = document.getElementById('small');
+						var oImg = oSmall.getElementsByTagName('img'); //小图
+
+						for (var i = 0; i < 4; i++) {
+							oImg[i].index = i+1;
+						 	oImg[i].onmouseover = function () {
+								oDa.src = 'images/big' + this.index + '.jpg'
+							}
+						}
+					</script> -->
+				</ul>
+			</div>
+			<div class="remai">
+				<h2>--  热卖推荐  --</h2>
+				<ul>
+					<li>
+						<img src="images/remai1.jpg">
+						<p>￥59.9</p>
+					</li>
+					<li>
+						<img src="images/remai2.jpg">
+						<p>￥139.9</p>
+					</li>
+					<li>
+						<img src="images/remai3.jpg">
+						<p>￥45.9</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="pintuan clearfix">
+			<div class="title">
+				<img src="images/pintuan.png" />
+				<span>小伙伴发起的拼团：</span>
+				<span>详细规则</span>
+				<span>开团后邀请好友参团，人数不足自动退款。</span>
+			</div>
+			<div class="con">
+				<img src="images/pintuan_con.jpg" />
+				<span>新月***星</span>
+				<span>还差1人成团</span>
+				<span>剩余 03:30:34</span>
+				<span>去参团</span>
+			</div>
+		</div>
+		<div class="col_main">
+			<div class="col_sidebar fl">
+				<div class="con_shop">
+					<h3>恋上公主</h3>
+					<ul>
+						<li>
+							<p>描述</p>
+							<p>4.59</p>
+						</li>
+						<li>
+							<p>质量</p>
+							<p>4.59</p>
+						</li>
+						<li>
+							<p>服务</p>
+							<p>4.68</p>
+						</li>
+					</ul>
+					<a href="javascript:;">收藏店铺</a>
+					<a href="javascript:;">进入店铺</a>
+					<div class="col_search">
+						<input type="text" />
+						<input type="submit" value="店内搜索" />
+					</div>
+				</div>
+				<div class="col_classify">
+					<h2>本店分类</h2>
+					<a href="javascript:;">全部商品</a>
+				</div>
+				<div class="col_look">
+					<h2>看了又看</h2>
+					<ul>
+						<li>
+							<img aos="fade-right" src="images/look1.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look2.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look3.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look4.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look5.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look6.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look7.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look8.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look9.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look10.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look11.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img aos="fade-right" src="images/look12.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col_extra fr">
+				<dl>
+					<dt>手机扫码下单</dt>
+					<dd>商品描述</dd>
+					<dd>产品参数</dd>
+					<dd>穿着效果</dd>
+					<dd>尺码说明</dd>
+					<dd>商品推荐</dd>
+				</dl>
+			</div>
+
+
+			<div class="col_goods">
+				<div class="title">
+					<ul>
+						<li><a href="javascript:;">商品详情</a></li>
+						<li><a href="javascript:;">累计评价</a></li>
+						<li><a href="javascript:;">本店同类商品</a></li>
+					</ul>
+				</div>
+				<div class="dec">
+					<h2>商品描述</h2>
+					<p>2018春季新款气质百搭灯笼袖女装打底上衣韩版休闲宽松显瘦简约条纹长袖衬衫</p>
+				</div>
+				<div class="param">
+					<h2>产品参数</h2>
+					<ul>
+						<li>颜色: 白色</li>
+						<li>季节: 春季</li>
+						<li>材质: 棉涤</li>
+						<li>领型: POLO领</li>
+						<li>袖长: 长袖</li>
+						<li>穿着方式: 开襟</li>
+						<li>风格: 简约</li>
+						<li>尺码: S,XL,L,M,XXL</li>
+						<li>衣长: 常规款（51-65cm）</li>
+						<li>版型: 宽松</li>
+					</ul>
+				</div>
+				<div class="show">
+					<h2>穿着效果</h2>
+					<img src="images/show1.jpg" />
+					<img src="images/show2.jpg" />
+					<img src="images/show3.jpg" />
+					<img src="images/show4.jpg" />
+					<img src="images/show5.jpg" />
+					<img src="images/show6.jpg" />
+					<img src="images/show7.jpg" />
+					<img src="images/show8.jpg" />
+					<img src="images/show9.jpg" />
+					<img src="images/show10.jpg" />
+				</div>
+				<div class="size">
+					<h2>尺码说明</h2>
+					<dl>
+						<dt>尺码</dt>
+						<dd>S</dd>
+						<dd>M</dd>
+						<dd>L</dd>
+						<dd>XL</dd>
+						<dd>XXL</dd>
+					</dl>
+					<dl>
+						<dt>肩宽</dt>
+						<dd>72</dd>
+						<dd>74</dd>
+						<dd>76</dd>
+						<dd>78</dd>
+						<dd>80</dd>
+					</dl>
+					<dl>
+						<dt>胸围</dt>
+						<dd>116</dd>
+						<dd>120</dd>
+						<dd>124</dd>
+						<dd>128</dd>
+						<dd>132</dd>
+					</dl>
+					<dl>
+						<dt>袖长</dt>
+						<dd>39</dd>
+						<dd>40</dd>
+						<dd>41</dd>
+						<dd>42</dd>
+						<dd>43</dd>
+					</dl>
+					<p>※ 以上尺寸为实物人工测量，因测量当时不同会有1-2cm误差，相关数据仅作参考，以收到实物为准。</p>
+				</div>
+				<div class="other">
+					<h2>本店同类商品</h2>
+					<ul>
+						<li>
+							<img src="images/look1.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look2.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look3.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look4.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look5.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look6.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look7.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look8.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look9.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look10.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look11.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+						<li>
+							<img src="images/look12.jpg" />
+							<p>洋气条纹阔腿裤套装女夏季新款韩版洋气喇叭袖露肩白衬衫两件套装</p>
+							<span>¥ 59.9</span>
+							<span>2</span>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</main>
+
+
+
+<footer>
+	<div class="center">
+		<div class="help">
+			<ul>
+				<li>
+					<h2>- 新手帮助 -</h2>
+					<span><a href="javascript:;">常见问题</a></span>
+					<span><a href="javascript:;">自助服务</a></span><br>
+					<span><a href="javascript:;">联系客服</a></span>
+					<span><a href="javascript:;">意见反馈</a></span>
+				</li>
+				<li>
+					<h2>- 权益保障 -</h2>
+					<span><a href="javascript:;">全国包邮</a></span>
+					<span><a href="javascript:;">7天无理由退货</a></span><br>
+					<span><a href="javascript:;">退货运费补贴</a></span>
+					<span><a href="javascript:;">限时发货</a></span>
+				</li>
+				<li>
+					<h2>- 支付方式 -</h2>
+					<span><a href="javascript:;">微信支付</a></span>
+					<span><a href="javascript:;">支付宝</a></span><br>
+					<span><a href="javascript:;">白付美支付</a></span>
+				</li>
+				<li>
+					<h2>- 移动客户端下载 -</h2>
+					<span><a href="javascript:;">蘑菇街</a></span>
+					<span><a href="javascript:;">美丽说</a></span>
+					<span><a href="javascript:;">uni引力</a></span>
+				</li>
+			</ul>
+		</div>
+		<div class="other">
+			<ul>
+				<li><a href="javascript:;">美丽说</a></li>
+				<li><a href="javascript:;">|　淘粉吧</a></li>
+				<li><a href="javascript:;">|　QQ钱包</a></li>
+				<li><a href="javascript:;">|　时尚品牌网</a></li>
+				<li><a href="javascript:;">|　装修</a></li>
+				<li><a href="javascript:;">|　慧聪网</a></li>
+			</ul>
+		</div>
+		<div class="list">
+			<a href="javascript:;">关于我们</a>
+			<a href="javascript:;">招聘信息</a>
+			<a href="javascript:;">联系我们</a>
+			<a href="javascript:;">商家入驻</a>
+			<a href="javascript:;">商家后台</a>
+			<a href="javascript:;">蘑菇商学院</a>
+			<a href="javascript:;">商家社区</a>
+			<a href="javascript:;">规则中心</a>
+			<a href="javascript:;">有害信息举报</a>
+			<span>&copy;2017 Mogujie.com 杭州卷瓜网络有限公司</span>
+		</div>
+		<div class="copyright">
+			<a href="javascript:;">营业执照：913301065526808764</a>
+			<a href="javascript:;">|　网络文化经营许可证：浙网文（2016）0349-219号</a>
+			<a href="javascript:;">|　增值电信业务经营许可证：浙B2-20110349</a>
+			<a href="javascript:;">|　安全责任书</a>
+			<a href="javascript:;">|　浙公网安备 33010602002329号</a>
+			<a href="javascript:;">互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002</a>
+			<a href="javascript:;">|　浙网食A33010003</a>
+			<a href="javascript:;">|　出版物网络交易平台服务经营备案证</a>
+			<a href="javascript:;">|　（浙）网械平台备字[2018]第00006号</a>
+		</div>
+	</div>
+</footer>
+
+
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+</body>
+</html>

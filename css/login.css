@@ -1,0 +1,26 @@
+
+header{height: 100px;}
+header img{margin-top: 26px;}
+header p{width: 900px;background: #FFEFEF;border: 2px solid #FFC0CC;text-align: center;margin: -40px 0 0 200px ;}
+
+
+main{height: 600px;background: url(../images/login_main.png) no-repeat;background-size: 1500px 600px;}
+main .login{width: 400px;height: 350px;background: #EEDEDF;margin-top: 80px;opacity: 0.8;}
+main .login .title{width: 380px;height: 70px;margin: 0 10px;border-bottom: 1px solid #D0BCBC;background: url(../images/login_erweima.png) no-repeat right 10px;line-height: 70px;}
+main .login .title a{width: 120px;display: block;height: 70px;float: left;margin-left: 30px;font-size: 16px;text-align: center;}
+main .login .title p{width: 50px;height: 50px;float: right;margin-top: 10px;cursor: pointer;}
+.tit{color: #FF4262;border-bottom: 2px solid #FF4262;}
+main .login .content input{margin: 20px 0 0 40px;width: 310px;height: 40px;padding-left: 20px;}
+main .login .content button{width: 330px;height: 40px;margin: 30px 10px 10px 40px;background: #FE5570;border: none;border-radius: 4px;color: #fff;outline: none;}
+main .login .content span{margin-left: 40px;padding-left: 20px;color: #473633;}
+main .login .content span:nth-of-type(1){background: url(../images/login_qq.png) no-repeat;}
+main .login .content span:nth-of-type(2){background: url(../images/login_wx.png) no-repeat;}
+main .login .content span:nth-of-type(3){text-decoration: underline;display: block;margin: 0px 0 0 270px;}
+
+main .login .ph_login input:nth-of-type(1){margin: 20px 0 0 40px;width: 310px;height: 40px;padding-left: 20px;}
+main .login #ph_login p{width: 100px;background: #FE6784;color: #fff;height: 44px;float: left;margin: 20px 0 0 40px;text-align: center;line-height: 44px;cursor: pointer;}
+main .login #ph_login input:nth-of-type(2){width: 200px;height: 40px;float: left;margin: 20px 0 0 10px;padding-left: 20px;}
+
+
+
+
